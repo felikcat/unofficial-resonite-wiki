@@ -1,0 +1,12 @@
+:experimental:
+
+== Desktop Keybindings
+
+.Movement
+. Tap kbd:[C] to toggle Duck, hold kbd:[C] to be able to let go of being Ducked.
+. Hold kbd:[LShift] to Run.
+. Tap kbd:[Z] to toggle Sneak.
+
+.Dev Tool
+. kbd:[R] to select the slot/object you are looking at; kbd:[T] can then be tapped to Open its Inspector.
+. kbd:[I] to open the Inspector at Root (global / the world and all of its components).

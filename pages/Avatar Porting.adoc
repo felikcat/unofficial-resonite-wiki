@@ -1,0 +1,15 @@
+== If you want someone to help you, do the following:
+. Import your .fbx (Model) as a file instead of a 3D model.
+. Save that file to your Inventory.
+. In the top-right of the Main Menu, once "Synced" is displayed, then you can spawn that new model.
+
+NOTE: Reason to do this is cause syncing to the Cloud is much faster than a Headless / Hosted server by a player.
+
+== How to pin-point floating objects in your Avatar (such as Hypno Eyes)
+. You can prod at bones to see what your floating objects are assigned to via BlendShapeWeights.
+- Be sure to move around your limbs if in VR, as to pinpoint quicker what those floating objects are.
+
+== 2.0 vs 3.0 VRChat differences
+
+== PBS Metallic differences compared to ToonShader
+. AlbedoTexture = MainTexture

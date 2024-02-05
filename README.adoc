@@ -1,12 +1,43 @@
 :experimental:
 
+.Why not help the official wiki?
+[%collapsible]
+====
+
+I don't want to **officially** provide false information. Keep in mind I am a complete beginner that wrote this wiki, to learn by teaching.
+
+====
+''''
+
+== Running on Arch Linux
+
+. Install the following: +
+`# pacman -S ffmpeg libxcb assimp rtmpdump dotnet-sdk` +
+`# paru -S youtube-dl`
+
+. Install link:https://github.com/Babakinha/ResoniteLinuxFix#how-to-install[ResoniteLinuxFix]; there's no need to compile it.
+. Enjoy Resonite.
+
+
 == Desktop Keybindings
+
+. Tap kbd:[F5] for Thirdperson.
+. Tap kbd:[2] to equip the Dev Tool.
+. Tap kbd:[3] to equip the Proto Flux Tool.
 
 .Movement
 . Tap kbd:[C] to toggle Duck, hold kbd:[C] to be able to let go of being Ducked.
 . Hold kbd:[LShift] to Run.
 . Tap kbd:[Z] to toggle Sneak.
 
+.Speech
+. Turn off the microphone (at the top-left corner of main menu, there is a Mic icon with an X at its top), then hold kbd:[Mouse4] (back button) to Push To Talk.
+
 .Dev Tool
 . kbd:[R] to select the slot/object you are looking at; kbd:[T] can then be tapped to Open its Inspector.
 . kbd:[I] to open the Inspector at Root (global / the world and all of its components).
+
+.UI Focus (to use inspectors easily)
+. kbd:[LCtrl + LClick] to focus on an inspector, then afterwards...
+- kbd:[LCtrl + RClick] to move the X and Y axis in a 2D fashion (side to side, up or down).
+- kbd:[LCtrl + ScrollWheel] to Zoom In and Out.

@@ -7,3 +7,5 @@
 . Enjoy Resonite.
 
 NOTE: Check the Logs after playing for a while, it's in the root directory of Resonite. This will tell you if you are missing any additional dependencies.
+
+WARNING: Do not ever run Resonite on Windows or through Proton if you've been using the Linux version, you will break your Cloud Sync and likely lose important data.

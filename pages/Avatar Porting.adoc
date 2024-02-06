@@ -1,3 +1,8 @@
+:experimental:
+
+== Desktop tips
+. Tap kbd:[F6] to be able to select yourself with the Inspector.
+
 == If you want someone to help you, do the following:
 . Import your .fbx (Model) as a file instead of a 3D model.
 . Save that file to your Inventory.

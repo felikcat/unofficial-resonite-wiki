@@ -1,0 +1,9 @@
+:experimental:
+
+. Install the following: +
+`# pacman -S ffmpeg libxcb assimp rtmpdump`
+
+. Install link:https://github.com/Babakinha/ResoniteLinuxFix#how-to-install[ResoniteLinuxFix] following its instructions; there's no need to compile it.
+. Enjoy Resonite.
+
+NOTE: Check the Logs after playing for a while, it's in the root directory of Resonite. This will tell you if you are missing any additional dependencies.

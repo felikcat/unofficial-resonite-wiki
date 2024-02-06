@@ -58,3 +58,18 @@ image:Avatar Porting/Resonite_RfpYSzxQnH.png[]
 
 - Drag the text "Source" under VisemeAnalyzer to "TargetReference" under AvatarVoiceSourceAssigner. It should look like this: +
 image:Avatar Porting/Resonite_QzwpNNoP3r.png[]
+
+- Now is a good time to deselect all your tools, then click on the avatar to Equip it, then to save it into the Main Menu's Inventory: +
+image:Avatar Porting/Resonite_9kD0jbaVUW.png[] +
+Afterwards, equip a different avatar, then spawn in the avatar you just saved by double-clicking it.
+
+- In the Inspector we are going back to CenteredRoot -> RootNode -> Face, scroll all the way down, and now you're going to line up every mouth texture with each slot of the DirectVisemeDriver. If done correctly, it'll look as follows (I excluded Laugh here; it technically goes up to 15): +
+image:Avatar Porting/explorer_jOlUvDRSM9.png[] +
+image:Avatar Porting/Resonite_eAguhtFZSU.jpg[]
+
+. Add a slot underneath Face with the following button: 
+image:Avatar Porting/Resonite_fmgMfqer1C.png[] +
+Then name it Flux: +
+image:Avatar Porting/Resonite_BN5pHbyxwT.png[] +
+
+- Now equip the Proto Flux tool, open the Context wheel then tap

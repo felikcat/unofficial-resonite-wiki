@@ -35,17 +35,25 @@ image:Avatar Porting/Resonite_WrnmRviGkC.jpg[]
 image:Avatar Porting/Resonite_GaSfve9kar.jpg[] +
 image:Avatar Porting/Resonite_Wp7IbnJAQW.jpg[]
 
-. Now that your hands are finished, tap on Avatar Creator -> "Create" and now your model is setup! Now you should equip your avatar by deselecting/putting away your tool(s), then clicking on the model to "Equip Avatar". This will also show if there's any flaws, such as incorrect Headset positioning, which can be fixed later.
+. Now that your hands are finished, tap on Avatar Creator -> "Create" and now your model is setup!
+
+WARNING: Do not equip the avatar, you will start running into serious problems when we get to Head Proxies.
 
 == 2. Setting up the model's textures
+. To start, you need to get out of the Avatar.
+
 . Let's setup our mouths and mouth movement.
 - First, we're going to set the main texture to the neutral/base state image you've got. First, click the up arrow on the left of the Mouth material: +
 image:Avatar Porting/Resonite_afJZVDTUrz.png[]
 
-- Drag the image to the AlbedoTexture slot (this is the main texture for PBS_Metallic).
+- Drag the image to the AlbedoTexture slot (this is the main texture for PBS_Metallic):
 image:Avatar Porting/Resonite_WafBDrXRHP.png[]
 
-- In the Inspector: CenteredRoot -> RootNode -> Face (double-click it). Now scroll all the way down, then tap "Attach Component".
-
-- Assets -> Utility -> AssetMultiplexer<A> -> AssetMultiplexer<ITexture2D>. Now, below "Assets (list):" you will see an Add button, tap it, then drag a picture of your mouth in its neutral/base state: +
+- In the Inspector: CenteredRoot -> RootNode -> Face (double-click it). Now scroll all the way down, then tap "Attach Component". The component we want is: `Assets -> Utility -> AssetMultiplexer<A> -> AssetMultiplexer<ITexture2D>`. Now, below "Assets (list):" you will see an Add button, tap it, then drag a picture of your mouth in its neutral/base state to slot 0: +
 image:Avatar Porting/Resonite_RfpYSzxQnH.png[]
+
+- Attach another Component, `Rendering -> DirectVisemeDriver`. 
+
+- Now in the Inspector double-click to select the Head Proxy, scroll all the way down and attach the following components: `Media -> Utility -> VisemeAnalyzer`, `Users -> Common Avatar System -> Audio -> AvatarVoiceSourceAssigner`
+
+- Drag the text "Source" under VisemeAnalyzer to "TargetReference" under AvatarVoiceSourceAssigner.

@@ -2,10 +2,15 @@
 
 .General
 . Tap kbd:[F5] for Thirdperson.
-. Tap kbd:[F6] or kbd:[F] for Thirdperson on yourself or what's selected.
+
+. Tap kbd:[F6] or kbd:[F] for Thirdperson "Maya-mode" on yourself or what's selected.
 - Be careful, this can cause your game to crash; if you see a rapid zoom in or out, quickly stop it.
+- kbd:[LCtrl + RClick] to move the X and Y axis in a 2D fashion (side to side, up or down).
+- kbd:[LCtrl + ScrollWheel] to Zoom In and Out.
+
 . Tap kbd:[LCtrl + PrintScreen] to take a screenshot after the 10 second countdown timer.
 - Other people can see this timer, giving ample time for a group photo.
+
 . Tap kbd:[ScrollWheel], referred to as the "Middle Mouse", to open the Context Menu.
 . Tap kbd:[E] to quickly Rotate what you have selected.
 - It's usually better to use Context Menu -> Gizmo Options -> Rotation, to be more precise.

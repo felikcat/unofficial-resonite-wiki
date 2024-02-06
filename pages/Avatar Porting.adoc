@@ -56,4 +56,5 @@ image:Avatar Porting/Resonite_RfpYSzxQnH.png[]
 
 - Now in the Inspector double-click to select the Head Proxy, scroll all the way down and attach the following components: `Media -> Utility -> VisemeAnalyzer`, `Users -> Common Avatar System -> Audio -> AvatarVoiceSourceAssigner`
 
-- Drag the text "Source" under VisemeAnalyzer to "TargetReference" under AvatarVoiceSourceAssigner.
+- Drag the text "Source" under VisemeAnalyzer to "TargetReference" under AvatarVoiceSourceAssigner. It should look like this: +
+image:Avatar Porting/Resonite_QzwpNNoP3r.png[]

@@ -12,18 +12,28 @@ I don't want to **officially** provide false information. Keep in mind I am a co
 == Running on Arch Linux
 
 . Install the following: +
-`# pacman -S ffmpeg libxcb assimp rtmpdump dotnet-sdk` +
-`# paru -S youtube-dl`
+`# pacman -S ffmpeg libxcb assimp rtmpdump`
 
-. Install link:https://github.com/Babakinha/ResoniteLinuxFix#how-to-install[ResoniteLinuxFix]; there's no need to compile it.
+. Install link:https://github.com/Babakinha/ResoniteLinuxFix#how-to-install[ResoniteLinuxFix] following its instructions; there's no need to compile it.
 . Enjoy Resonite.
+
+NOTE: Check the Logs after playing for a while, it's in the root directory of Resonite. This will tell you if you are missing any additional dependencies.
 
 
 == Desktop Keybindings
 
 . Tap kbd:[F5] for Thirdperson.
-. Tap kbd:[2] to equip the Dev Tool.
-. Tap kbd:[3] to equip the Proto Flux Tool.
+
+.Tools
+. Tap kbd:[1] to de-equip your tools.
+. kbd:[2] -> Dev Tool
+. kbd:[3] -> Proto Flux Tool
+. kbd:[4] -> Material Tool
+. kbd:[5] -> Shape Tool
+. kbd:[6] -> Light Tool
+. kbd:[7] -> Grabbable Setter Tool
+. kbd:[8] -> Character Collider Setter Tool
+. kbd:[9] -> Microphone (Screen Mode)
 
 .Movement
 . Tap kbd:[C] to toggle Duck, hold kbd:[C] to be able to let go of being Ducked.
@@ -32,6 +42,8 @@ I don't want to **officially** provide false information. Keep in mind I am a co
 
 .Speech
 . Turn off the microphone (at the top-left corner of main menu, there is a Mic icon with an X at its top), then hold kbd:[Mouse4] (back button) to Push To Talk.
+. **Only if you installed `Inventory -> Resonite Essentials -> Accessibility -> Mute Helper`**: +
+Tap kbd:[H] to quickly bring up a text prompt.
 
 .Dev Tool
 . kbd:[R] to select the slot/object you are looking at; kbd:[T] can then be tapped to Open its Inspector.

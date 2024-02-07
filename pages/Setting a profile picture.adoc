@@ -1,0 +1,3 @@
+. Import an image.
+. Hold/drag the image, then open the Main Menu.
+. Right-click into the profile picture area, now it'll set.

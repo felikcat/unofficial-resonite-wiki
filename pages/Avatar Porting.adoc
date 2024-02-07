@@ -40,8 +40,10 @@ image:Avatar Porting/Resonite_Wp7IbnJAQW.jpg[]
 
 WARNING: Do not equip the avatar, you will start running into serious problems when we get to Head Proxies.
 
-== 2. Setting up the model's textures
-. To start, you need to get out of the Avatar.
+== 2. Setting up mouth movement and mouth textures
+. To start, you need to save then get out of the Avatar.
+
+- Open the Main Menu then go to your Inventory, click Save Avatar, then exit your Avatar by selecting a different one.
 
 . Let's setup our mouths and mouth movement.
 - First, we're going to set the main texture to the neutral/base state image you've got. First, click the up arrow on the left of the Mouth material: +
@@ -53,6 +55,9 @@ image:Avatar Porting/Resonite_WafBDrXRHP.png[]
 - In the Inspector: CenteredRoot -> RootNode -> Face (double-click it). Now scroll all the way down, then tap "Attach Component". The component we want is: `Assets -> Utility -> AssetMultiplexer<A> -> AssetMultiplexer<ITexture2D>`. Now, below "Assets (list):" you will see an Add button, tap it, then drag a picture of your mouth in its neutral/base state to slot 0: +
 image:Avatar Porting/Resonite_RfpYSzxQnH.png[]
 
+- Select the Proto Flux tool, and now drag the base state mouth texture to the Target: +
+image:Avatar Porting/Resonite_vO3mfrdt3g.jpg[]
+
 - Attach another Component, `Rendering -> DirectVisemeDriver`. 
 
 - Now in the Inspector double-click to select the Head Proxy, scroll all the way down and attach the following components: `Media -> Utility -> VisemeAnalyzer`, `Users -> Common Avatar System -> Audio -> AvatarVoiceSourceAssigner`
@@ -60,7 +65,7 @@ image:Avatar Porting/Resonite_RfpYSzxQnH.png[]
 - Drag the text "Source" under VisemeAnalyzer to "TargetReference" under AvatarVoiceSourceAssigner. It should look like this: +
 image:Avatar Porting/Resonite_QzwpNNoP3r.png[]
 
-- Now is a good time to deselect all your tools, then click on the avatar to Equip it, then to save it into the Main Menu's Inventory: +
+. Now is a good time to deselect all your tools, then click on the avatar to Equip it, then to save it into the Main Menu's Inventory: +
 image:Avatar Porting/Resonite_9kD0jbaVUW.png[] +
 Afterwards, equip a different avatar, then spawn in the avatar you just saved by double-clicking it.
 
@@ -73,5 +78,25 @@ image:Avatar Porting/Resonite_fmgMfqer1C.png[] +
 Then name it Flux: +
 image:Avatar Porting/Resonite_BN5pHbyxwT.png[] +
 
-- Now equip the Proto Flux tool, open the Context wheel then double-click `Core -> ValueFieldDrive<T> -> ValueFieldDrive<float>`
+- Now equip the Proto Flux tool, we're going to drag out and Source (from the context menu) all of the vowels from VisemeAnalyzer, which should look like this when finished: +
+image:Avatar Porting/Resonite_577JkwHn2b.jpg[]
 
+. Context Menu -> Browse Nodes -> Math -> ValueMaxMulti<T> -> ValueMaxMulti<long>, then double-click where you want to place it.
+
+- Now keep pressing the `+` sign until you have 15 operand slots, then link the sources to each operand slot: +
+image:Avatar Porting/Resonite_bhMYG7z0Sz.png[]
+
+. `Utility -> IndexOfFirstMatch -> IndexOfFirstValueMatch<T> -> IndexOfFirstValueMatch<float>`
+
+- Move Silence to the second Match slot, then continue on moving the rest to the other 14 slots: +
+image:Avatar Porting/Resonite_YEUjOtPOvd.jpg[]
+
+. In the Inspector, go back to CenteredRoot -> RootNode -> Face, find `AssetMultiplexer<ITexture2D>`, then using the Proto Flux tool drag out "Index" and in the context menu tap "Drive": +
+image:Avatar Porting/Resonite_W6QIesjcqi.png[]
+
+. With the Proto Flux tool equipped, long select (desktop mode: holding kbd:[R]) until all of the ProtoFlux nodes are highlighted in a cyan color.
+
+- In the Inpsector go to CenteredRoot -> RootNode -> Face -> Flux, grab "Flux" and open its context menu, now you can pack our ProtoFlux into "Flux". It should look similar to this: +
+image:Avatar Porting/Resonite_GmaUCg4nJn.png[]
+
+- Now you have a moving mouth! Yay!

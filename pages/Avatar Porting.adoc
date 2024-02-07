@@ -2,7 +2,7 @@
 :imagesdir: ../images/
 
 == Before proceeding
-- Get familiar with xref:pages/Desktop usage.adoc[Desktop usage] if you haven't thoroughly already.
+- Get familiar with xref:Desktop usage.adoc[Desktop usage] if you haven't thoroughly already.
 
 
 == If you want someone to help you, do the following:

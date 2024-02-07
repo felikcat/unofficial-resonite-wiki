@@ -5,4 +5,4 @@
 - xref:pages/Bones.adoc[Bones]
 - xref:pages/Protoflux.adoc[Protoflux]
 - xref:pages/Running on Arch Linux.adoc[Running on Arch Linux]
-- xref:pages/Desktop keybindings.adoc[Desktop keybindings]
+- xref:pages/Desktop usage.adoc[Desktop usage] -> (keybindings, and how to do universal things)

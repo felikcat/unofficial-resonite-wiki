@@ -1,8 +1,9 @@
 :experimental:
 :imagesdir: ../images/
 
-== Desktop tips
-. Tap kbd:[F6] to be able to select yourself with the Inspector.
+== Before proceeding
+- Get familiar with xref:pages/Desktop usage.adoc[Desktop usage] if you haven't thoroughly already.
+
 
 == If you want someone to help you, do the following:
 . Import your .fbx (Model) as a file instead of a 3D model.
@@ -72,4 +73,5 @@ image:Avatar Porting/Resonite_fmgMfqer1C.png[] +
 Then name it Flux: +
 image:Avatar Porting/Resonite_BN5pHbyxwT.png[] +
 
-- Now equip the Proto Flux tool, open the Context wheel then tap
+- Now equip the Proto Flux tool, open the Context wheel then double-click `Core -> ValueFieldDrive<T> -> ValueFieldDrive<float>`
+

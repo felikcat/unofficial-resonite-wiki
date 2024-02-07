@@ -43,5 +43,5 @@ Tap kbd:[H] to quickly bring up a text prompt.
 .UI Focus (to use inspectors easily)
 . kbd:[LCtrl + LClick] on an Inspector or Protoflux code to Focus on it, then afterwards...
 - You can use the same keybindings to click off of what you were focused on, this will exit the focus.
-- kbd:[LCtrl + RClick] to move the X and Y axis in a 2D fashion (side to side, up or down).
+- kbd:[LCtrl + RClick] to toggle moving the X and Y axis in a 2D fashion (side to side, up or down). Let go of kbd:[LCtrl] to exit this mode.
 - kbd:[LCtrl + ScrollWheel] to Zoom In and Out.

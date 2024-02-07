@@ -3,7 +3,6 @@
 == Pages
 - xref:pages/Avatar Porting.adoc[Avatar Porting]
 - xref:pages/Bones.adoc[Bones]
-- xref:pages/Protoflux.adoc[Protoflux]
 - xref:pages/Running on Arch Linux.adoc[Running on Arch Linux]
 - xref:pages/Desktop usage.adoc[Desktop usage] -> (keybindings, and how to do universal things)
 - xref:pages/Setting a profile picture.adoc[Setting a profile picture]

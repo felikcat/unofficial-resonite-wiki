@@ -9,6 +9,7 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
+== 1. Creating a custom nameplate
 . Open an Inspector on yourself; in desktop mode, use kbd:[F6] to help with that. Note: In VR you should be able to select your nameplate directly by looking up and selecting it with the Dev Tool.
 image:Resonite_5T7XLtKJfv.png[]
 
@@ -37,3 +38,10 @@ image: +
 image:Resonite_XCIvIUl1Zc.png[]
 
 . Save your avatar after you're satifised. `Main Menu -> Inventory -> Save Avatar`. You can then `Set Avatar` and `Equip` it to not accidentally use your outdated avatar.
+
+== 2. Tips
+. You want to use as high of a font size as possible for better quality, it'll automatically be scaled down to `Name Badge -> TextRenderer` -> *Size*. 
+
+. `Name Badge -> TextUnlitMaterial` -> *ZTest* can be changed to "Always" to show the Name Badge no matter what, overlapping everything.
+
+. `Name Badge -> TextUnlitMaterial` -> *GlyphRenderMethod* "Raster" is preferrable if your custom font uses Raster graphics (commonly known as a Pixel or Bitmap font).

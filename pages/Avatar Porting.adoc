@@ -1,5 +1,5 @@
 :experimental:
-:imagesdir: ../images/
+:imagesdir: ../images/Avatar Porting
 ifdef::env-github[]
 :icons:
 :tip-caption: :bulb:
@@ -32,17 +32,17 @@ TIP: Why? Syncing to the Cloud is much faster than uploading to a Headless serve
 - You are importing a 3D Model -> Regular / Avatar -> Meters (m) if the model is measured like this -- if you do not know, use Auto Humanoid Height. Now, run the Import!
 
 . Go to the Main Menu -> Home -> Avatar Creator. You will then select the Headset with the Dev Tool, and open an Inspector. Go up the Root until you see "Root: Avatar Creator". It should look like the following screenshot: +
-image:Avatar Porting/Resonite_rtFcjhfIeD.jpg[]
+image:Resonite_rtFcjhfIeD.jpg[]
 - Keep the Headset's Rotation at: x -> 0, y -> 90, z -> 0
 
 . Avatar Creator -> Turn off "Use Symmetry", we're going to manually setup the hands.
 - You want your hands to relatively look like this. Be sure to use the Gizmos (those red, green, and blue arrows) to line it up precisely:
-image:Avatar Porting/Resonite_vgfOSb0As2.jpg[] +
-image:Avatar Porting/Resonite_WrnmRviGkC.jpg[]
+image:Resonite_vgfOSb0As2.jpg[] +
+image:Resonite_WrnmRviGkC.jpg[]
 
 - If your hand grabber got screwed up, fix the Grabber and Shelf manually, such as this: +
-image:Avatar Porting/Resonite_GaSfve9kar.jpg[] +
-image:Avatar Porting/Resonite_Wp7IbnJAQW.jpg[]
+image:Resonite_GaSfve9kar.jpg[] +
+image:Resonite_Wp7IbnJAQW.jpg[]
 
 . Now that your hands are finished, tap on Avatar Creator -> "Create" and now your model is setup!
 
@@ -51,56 +51,56 @@ WARNING: Do not equip the avatar yet, you will run into serious problems when we
 == 2. Setting up mouth movement and mouth textures
 . Let's setup our mouths and mouth movement.
 - First, we're going to set the main texture to the base state (neutral) image you've got. First, click the up arrow on the left of the Mouth material: +
-image:Avatar Porting/Resonite_afJZVDTUrz.png[]
+image:Resonite_afJZVDTUrz.png[]
 
 - Drag the image to the AlbedoTexture slot (this is the main texture for PBS_Metallic):
-image:Avatar Porting/Resonite_WafBDrXRHP.png[]
+image:Resonite_WafBDrXRHP.png[]
 
 - In the Inspector: `CenteredRoot -> RootNode -> Face` (double-click it). Now scroll all the way down, then tap "Attach Component". The component we want is: `Assets -> Utility -> AssetMultiplexer<A> -> AssetMultiplexer<ITexture2D>`. Now, below "Assets (list):" you will see an Add button, tap it, then drag a picture of your mouth in its neutral/base state to slot 0: +
-image:Avatar Porting/Resonite_RfpYSzxQnH.png[]
+image:Resonite_RfpYSzxQnH.png[]
 
 - Select the Proto Flux tool, and now drag the base state mouth texture to the Target: +
-image:Avatar Porting/Resonite_vO3mfrdt3g.jpg[]
+image:Resonite_vO3mfrdt3g.jpg[]
 
 - Attach another Component, `Rendering -> DirectVisemeDriver`. 
 
 - Now in the Inspector double-click to select the Head Proxy, scroll all the way down and attach the following components: `Media -> Utility -> VisemeAnalyzer`, `Users -> Common Avatar System -> Audio -> AvatarVoiceSourceAssigner`
 
 - Drag the text *Source* under `VisemeAnalyzer` to *TargetReference* under `AvatarVoiceSourceAssigner`. It should look like this: +
-image:Avatar Porting/Resonite_QzwpNNoP3r.png[]
+image:Resonite_QzwpNNoP3r.png[]
 
 . Now is a good time to deselect all your tools, then click on the avatar to Equip it, then to save it into your inventory: +
-image:Avatar Porting/Resonite_9kD0jbaVUW.png[] +
+image:Resonite_9kD0jbaVUW.png[] +
 Afterwards, equip a different avatar, then spawn in the avatar you just saved by double-clicking it.
 
 . In the Inspector we are going back to `CenteredRoot -> RootNode -> Face`, scroll all the way down, and now you're going to line up every mouth texture with each slot of the DirectVisemeDriver. If done correctly, it'll look as follows (I excluded Laugh here; it technically goes up to 15): +
-image:Avatar Porting/explorer_jOlUvDRSM9.png[] +
-image:Avatar Porting/Resonite_eAguhtFZSU.jpg[]
+image:explorer_jOlUvDRSM9.png[] +
+image:Resonite_eAguhtFZSU.jpg[]
 
 . Add a slot underneath Face with the following button: 
-image:Avatar Porting/Resonite_fmgMfqer1C.png[] +
+image:Resonite_fmgMfqer1C.png[] +
 Then name it VisemeFlux: +
-image:Avatar Porting/Resonite_7ETqmVFhmV.png[] +
+image:Resonite_7ETqmVFhmV.png[] +
 
 - Now equip the Proto Flux tool, we're going to drag out and Source (from the context menu) all of the vowels from VisemeAnalyzer, which should look like this when finished: +
-image:Avatar Porting/Resonite_577JkwHn2b.jpg[]
+image:Resonite_577JkwHn2b.jpg[]
 
 . Context Menu -> Browse Nodes -> `Math -> ValueMaxMulti<T> -> ValueMaxMulti<long>`, then double-click where you want to place it.
 
 - Now keep pressing the `+` sign until you have 15 operand slots, then link the sources to each operand slot: +
-image:Avatar Porting/Resonite_bhMYG7z0Sz.png[]
+image:Resonite_bhMYG7z0Sz.png[]
 
 . `Utility -> IndexOfFirstMatch -> IndexOfFirstValueMatch<T> -> IndexOfFirstValueMatch<float>`
 
 - Move *Silence* to the second Match slot, then continue on moving the rest to the other 14 slots: +
-image:Avatar Porting/Resonite_YEUjOtPOvd.jpg[]
+image:Resonite_YEUjOtPOvd.jpg[]
 
 . In the Inspector, go back to CenteredRoot -> RootNode -> Face, find `AssetMultiplexer<ITexture2D>`, then using the Proto Flux tool drag out "Index" and in the context menu tap "Drive": +
-image:Avatar Porting/Resonite_W6QIesjcqi.png[]
+image:Resonite_W6QIesjcqi.png[]
 
 . With the Proto Flux tool equipped, long select (desktop mode: holding kbd:[R]) until all of the ProtoFlux nodes are highlighted in a cyan color.
 
 - In the Inpsector go to CenteredRoot -> RootNode -> Face -> Flux, grab "Flux" and open its context menu, now you can pack our ProtoFlux into "Flux". It should look similar to this: +
-image:Avatar Porting/Resonite_GmaUCg4nJn.png[]
+image:Resonite_GmaUCg4nJn.png[]
 
 - Now you have a moving mouth! Yay!

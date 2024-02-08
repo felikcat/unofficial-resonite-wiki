@@ -1,0 +1,39 @@
+:experimental:
+:imagesdir: ../images/Custom Nameplate
+ifdef::env-github[]
+:icons:
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+. Open an Inspector on yourself; in desktop mode, use kbd:[F6] to help with that. Note: In VR you should be able to select your nameplate directly by looking up and selecting it with the Dev Tool.
+image:Resonite_5T7XLtKJfv.png[]
+
+. Go up the Root until you get to your User: +
+image:Resonite_VVzgUh2KFv.png[]
+
+. Make a child inside your Model/Avatar using this button, then name it "💳 Nameplate": +
+image:Resonite_xyEfEhclB2.png[]
+
+. Drag *Name Badge*, *Icon Badges*, and *Live Indicator* into "💳 Nameplate".
+
+. Open "💳 Nameplate", then click *Attach Component*. Add `Users -> Common Avatar System -> AvatarUserReferenceAssigner`
+
+- Now we're going to drag out and click "💳 Nameplate", so we see two Inspectors.
+
+. For every *TargetUser* in *Name Badge*, *Icon Badges*, and *Live Indicator*, drag click *TargetUser* into AvatarUserReferenceAssigner's "References (List)". It should look as follows: +
+image:Resonite_jCbhTBRv3z.png[]
+
+. There are two things inside of your Name Badge to remove, there is "<noparse=", remove that: +
+image:Resonite_bvnOaF3ZR2.png[]
+- Then remove what will override your custom Name Badge if left alone, which would be *LabelTargets*, *ColorTargets*, and *OutlineTargets*: +
+image:Resonite_9HodJjXrSC.png[]
+
+. Feel free to do as you please with the nameplate, such as using custom materials, or simply changing the *TintColor* and *OutlineColor* as in this example: +
+image: +
+image:Resonite_XCIvIUl1Zc.png[]
+
+. Save your avatar after you're satifised. `Main Menu -> Inventory -> Save Avatar`. You can then `Set Avatar` and `Equip` it to not accidentally use your outdated avatar.

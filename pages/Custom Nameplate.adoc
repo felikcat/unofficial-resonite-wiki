@@ -34,14 +34,13 @@ image:Resonite_bvnOaF3ZR2.png[]
 image:Resonite_9HodJjXrSC.png[]
 
 . Feel free to do as you please with the nameplate, such as using custom materials, or simply changing the *TintColor* and *OutlineColor* as in this example: +
-image: +
 image:Resonite_XCIvIUl1Zc.png[]
 
 . Save your avatar after you're satifised. `Main Menu -> Inventory -> Save Avatar`. You can then `Set Avatar` and `Equip` it to not accidentally use your outdated avatar.
 
 == 2. Tips
-. You want to use as high of a font size as possible for better quality, it'll automatically be scaled down to `Name Badge -> TextRenderer` -> *Size*. 
+. You want to use as high of a font size as possible for better quality, it'll automatically be scaled down to `Name Badge -> TextRenderer` -> *Size*, and clamped to 32px Glyph Size by `Name Badge -> TextRenderer` -> *Font* -> *GlyphEmSize*. 
 
-. `Name Badge -> TextUnlitMaterial` -> *ZTest* can be changed to "Always" to show the Name Badge no matter what, overlapping everything.
+. `Name Badge -> TextUnlitMaterial` -> *ZTest* can be changed to "Always" to show the Name Badge no matter what, meaning people can see your Name Badge through walls.
 
 . `Name Badge -> TextUnlitMaterial` -> *GlyphRenderMethod* "Raster" is preferrable if your custom font uses Raster graphics (commonly known as a Pixel or Bitmap font).

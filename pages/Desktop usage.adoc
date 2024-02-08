@@ -14,15 +14,26 @@ endif::[]
 
 . Tap kbd:[F6] or kbd:[F] for Thirdperson "Maya-mode" on yourself or what's selected.
 - Be careful, this can cause your game to crash; if you see a rapid zoom in or out, quickly stop it.
-- kbd:[LCtrl + RClick] to move the X and Y axis in a 2D fashion (side to side, up or down).
+- kbd:[LCtrl + RClick] to move the X and Y axis in a 2D fashion.
+- kbd:[LCtrl + RClick] once then kbd:[LCtrl + WASD] keys to move around in a 3D fashion.
 - kbd:[LCtrl + ScrollWheel] to Zoom In and Out.
+
+. Tap kbd:[LCtrl + Tab] to cycle through your opened sessions.
 
 . Tap kbd:[LCtrl + PrintScreen] to take a screenshot after the 10 second countdown timer.
 - Other people can see this timer, giving ample time for a group photo.
 
 . Tap kbd:[ScrollWheel], referred to as the "Middle Mouse", to open the Context Menu.
+
 . Tap kbd:[E] to quickly Rotate what you have selected.
 - It's usually better to use Context Menu -> Gizmo Options -> Rotation, to be more precise.
+
+. kbd:[LAlt + Enter] to switch between Windowed and Borderless Windowed.
+
+. Tap kbd:[LCtrl + C] to Copy.
+. Tap kbd:[LCtrl + V] to Paste.
+. Tap kbd:[LCtrl + Z] to Undo.
+. Tap kbd:[LCtrl + Y] to Redo.
 
 .Tools
 . Tap kbd:[1] to de-equip your tools.
@@ -41,7 +52,8 @@ endif::[]
 . Tap kbd:[Z] to toggle Sneak.
 
 .Speech
-. Turn off the microphone (at the top-left corner of main menu, there is a Mic icon with an X at its top), then hold kbd:[Mouse4] (a mouse's top-side button) to Push To Talk.
+. Tap kbd:[M] to disable mute yourself / disable your microphone.
+. Only while muted, hold kbd:[Mouse4] (a mouse's top-side button) or kbd:[V] to Push To Talk.
 . **Only if you installed `Inventory -> Resonite Essentials -> Accessibility -> Mute Helper`**: +
 Tap kbd:[H] to quickly bring up a text prompt.
 

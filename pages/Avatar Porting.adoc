@@ -29,7 +29,7 @@ TIP: Why? Syncing to the Cloud is much faster than uploading to a Headless serve
 
 == 1. Setting up the model
 . To start with, you want to drag the .fbx of your model into Resonite. If this doesn't work, you have to go to Resonite's Main Menu -> Files, then find and double-click that model.
-- You are importing a 3D Model -> Regular / Avatar -> Meters (m) if the model is measured like this -- if you do not know, use Auto Humanoid Height. Now, run the Import!
+- You are importing a 3D Model -> Regular / Avatar -> Auto Humanoid Height. Now, run the Import!
 
 . Go to the Main Menu -> Home -> Avatar Creator. You will then select the Headset with the Dev Tool, and open an Inspector. Go up the Root until you see "Root: Avatar Creator". It should look like the following screenshot: +
 image:Resonite_rtFcjhfIeD.jpg[]
@@ -100,7 +100,7 @@ image:Resonite_W6QIesjcqi.png[]
 
 . With the Proto Flux tool equipped, long select (desktop mode: holding kbd:[R]) until all of the ProtoFlux nodes are highlighted in a cyan color.
 
-- In the Inpsector go to CenteredRoot -> RootNode -> Face -> Flux, grab "Flux" and open its context menu, now you can pack our ProtoFlux into "Flux". It should look similar to this: +
+- In the Inspector go to `CenteredRoot -> RootNode -> Face -> Flux`, grab "Flux" and open its context menu, now you can pack our ProtoFlux into "Flux". It should look similar to this: +
 image:Resonite_GmaUCg4nJn.png[]
 
 - Now you have a moving mouth! Yay!

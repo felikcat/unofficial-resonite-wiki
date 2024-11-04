@@ -1,9 +1,13 @@
 :experimental:
 
+The official wiki pages are confusing at times, or lack specific tutorials.
+
 == Pages
 - xref:pages/Avatar Porting.adoc[Avatar Porting]
 - xref:pages/Custom Nameplate.adoc[Custom Nameplate]
 - xref:pages/Running on Arch Linux.adoc[Running on Arch Linux]
 - xref:pages/Desktop usage.adoc[Desktop usage] -> (keybindings, and how to do universal things)
 - xref:pages/Setting a profile picture.adoc[Setting a profile picture]
-- xref:pages/Using Uki's Redprint.adoc[Using Uki's Redprint] (for organizing your Protoflux)
+- xref:pages/Using Uki's Redprint.adoc[Using Uki's Redprint] (for organizing your ProtoFlux)
+- xref:pages/Commonly used ProtoFlux Nodes.adoc[Commonly used ProtoFlux Nodes]
+- xref:pages/ProtoFlux rules.adoc[ProtoFlux rules/guidelines]

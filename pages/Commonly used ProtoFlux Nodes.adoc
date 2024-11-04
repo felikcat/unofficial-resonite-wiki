@@ -1,0 +1,2 @@
+. `ValueInput<>` -> select that then select the 'float3' datatype for example; this is how it goes for the rest.
+. `ValueObjectInput<>` -> such as 'string' datatype.

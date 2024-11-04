@@ -45,6 +45,7 @@ endif::[]
 . kbd:[7] -> Grabbable Setter Tool
 . kbd:[8] -> Character Collider Setter Tool
 . kbd:[9] -> Microphone (Screen Mode)
+. kbd:[0] -> Glue Tool
 
 .Movement
 . Tap kbd:[C] to toggle Duck, hold kbd:[C] to be able to let go of being Ducked.
@@ -61,8 +62,17 @@ Tap kbd:[H] to quickly bring up a text prompt.
 . kbd:[R] or kbd:[Mouse5] to select the slot/object you are looking at; kbd:[T] can then be tapped to Open its Inspector.
 . kbd:[I] to open the Inspector at Root (global / the world and all of its components).
 
+.ProtoFlux Tool
+. Double kbd:[LClick] to spawn your selected node.
+
+. **Removing/cutting ProtoFlux wire** (looks like a cable):
+- kbd:[LCtrl + LClick] on the ProtoFlux code to Focus on it, then afterwards get out the ProtoFlux tool with kbd:[3] and hold down kbd:[Mouse1] to cut through the ProtoFlux wire with a red laser.
+
+. **Removing a ProtoFlux relay** (they work like zip ties, bunching up cable into another location):
+- While holding the relay with kbd:[RClick], press kbd:[Delete].
+
 .UI Focus (to use inspectors easily)
-. kbd:[LCtrl + LClick] on an Inspector or Protoflux code to Focus on it, then afterwards...
+. kbd:[LCtrl + LClick] on an Inspector or ProtoFlux code to Focus on it, then afterwards...
 - You can use the same keybindings to click off of what you were focused on, this will exit the focus.
 - kbd:[LCtrl + RClick] to toggle moving the X and Y axis in a 2D fashion (side to side, up or down). Let go of kbd:[LCtrl] to exit this mode.
 - kbd:[LCtrl + ScrollWheel] to Zoom In and Out.

@@ -9,4 +9,5 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-== DynamicBoneChain
+== Physics -> Dynamic Bones -> DynamicBoneChain
+You can put a DynamicBoneChain under `Your-Model.fbx` -> `CenteredRoot` -> `RootNode` -> `Armature` -> `Hips` for dynamic bones on every part of your avatar.

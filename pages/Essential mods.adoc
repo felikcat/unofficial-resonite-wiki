@@ -1,0 +1,10 @@
+.Use https://github.com/Gawdl3y/Resolute[Resolute] to have a nice graphical interface to install mods with; its usage is assumed.
+. ResoniteModSettings
+. DynBoneWrangler
+. EffortlessEfficiency
+. ResoniteIkCulling
+. CherryPick
+. Optizoom
+. ComponentMemberReplicator
+. ComponentSearchWizard
+. ReferenceFinderWizard

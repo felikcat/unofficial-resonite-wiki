@@ -1,2 +1,5 @@
 === Any task with a Delay must run Async
 Nodes that need an async task will turn red and not function if you try to connect them to a non-async (regular) function.
+
+=== Children inherit the parent
+Example: There's a need to position at your nametag, putting children under the nametag allows the children to use the position of the nametag directly.

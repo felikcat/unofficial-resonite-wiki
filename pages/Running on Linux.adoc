@@ -1,0 +1,29 @@
+:experimental:
+:imagesdir: ../images/
+ifdef::env-github[]
+:icons:
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+== Running the Windows version instead of Linux native
+The native Linux build is known to lack support, and is going to be removed soon. It causes a lot more problems than it's worth as well.
+
+In Steam's Library, kbd:[RClick] on Resonite, kbd:[LClick] properties, go to Compatibility and force use of "Proton Experimental".
+
+== Using gamescope / a GNOME tip if you use fractional display scaling
+Gamescope can be used to run Resonite at full resolution on say a 3840x2160 display, instead of 2560x1440 as mandated by 150% fractional scaling. +
+This 2560x1440 resolution limit on 4K displays without Gamescope is due to GNOME's lack of support for native scaling through XWayland.
+
+For Ubuntu 24.10, follow my instructions on how to https://gist.github.com/felikcat/a42a2a99fc0ba2fbddcd11c72d27ee59[compile and install Gamescope].
+
+Through Steam's library, here's an example of the launch options you could give Resonite: `gamescope -e -f -W 3840 -H 2160 -r 120 -- %command% -LoadAssembly Libraries/ResoniteModLoader.dll -DoNotAutoLoadHome -SkipIntroTutorial`
+
+TIP: *-e* = Steam integration +
+*-f* = fullscreen mode +
+*-W* = display width (X) +
+*-H* = display height (Y) +
+*-r* = display refresh rate

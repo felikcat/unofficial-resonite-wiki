@@ -8,8 +8,6 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-NOTE: These instructions are for Ubuntu 24.10.
-
 == Running the Windows version instead of Linux native
 The native Linux build is known to lack support, and is going to be removed soon. It causes a lot more problems than it's worth as well.
 

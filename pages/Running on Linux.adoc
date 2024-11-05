@@ -1,5 +1,4 @@
 :experimental:
-:imagesdir: ../images/
 ifdef::env-github[]
 :icons:
 :tip-caption: :bulb:
@@ -9,12 +8,14 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
+NOTE: These instructions are for Ubuntu 24.10.
+
 == Running the Windows version instead of Linux native
 The native Linux build is known to lack support, and is going to be removed soon. It causes a lot more problems than it's worth as well.
 
 In Steam's Library, kbd:[RClick] on Resonite, kbd:[LClick] properties, go to Compatibility and force use of "Proton Experimental".
 
-== Using gamescope / a GNOME tip if you use fractional display scaling
+== Using Gamescope / a GNOME tip if you use fractional display scaling
 Gamescope can be used to run Resonite at full resolution on say a 3840x2160 display, instead of 2560x1440 as mandated by 150% fractional scaling. +
 This 2560x1440 resolution limit on 4K displays without Gamescope is due to GNOME's lack of support for native scaling through XWayland.
 
@@ -27,3 +28,74 @@ TIP: *-e* = Steam integration +
 *-W* = display width (X) +
 *-H* = display height (Y) +
 *-r* = display refresh rate
+
+== How to support and use the Bigscreen Beyond on Ubuntu 24.10
+
+.Install the required and recommended dependencies: +
+- `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+- `. "$HOME/.cargo/env"`
+- `sudo apt install git build-essential fakeroot libncurses5-dev libssl-dev ccache bison flex debhelper gawk bindgen dkms libtraceevent-dev libtracefs-dev libpci-dev python3-dev dwarves`
+
+Go to the https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/oracular[ubuntu-kernel] repository, and look at what's the newest stable release. An example would be "Ubuntu-6.11.0-9.9": +
+`git clone --depth 1 -b Ubuntu-6.11.0-9.9 https://git.launchpad.net/~ubuntu-kernel/ubuntu/+source/linux/+git/oracular`
+
+Enter the newly downloaded directory: +
+`cd oracular`
+
+Use the currently installed kernel configuration: +
+`cp /boot/config-$(uname -r) .config`
+
+We do not have the certificate to sign kernel modules:
+----
+./scripts/config --file .config --set-str LOCALVERSION "-bigscreen-beyond"
+./scripts/config --file .config --disable MODULE_SIG
+./scripts/config --disable SYSTEM_TRUSTED_KEYS
+./scripts/config --disable SYSTEM_REVOCATION_KEYS
+./scripts/config --set-str CONFIG_SYSTEM_TRUSTED_KEYS ""
+./scripts/config --set-str CONFIG_SYSTEM_REVOCATION_KEYS ""
+----
+
+`wget https://gist.githubusercontent.com/TayouVR/af8635a4b8e1d02d038be1be1d221c83/raw/3806a6ff0a03721904164277d7523d43f7ca383c/bigscreenBeyond.patch`
+
+`patch -p1 -N < bigscreenBeyond.patch`
+
+If that patch fails, you need to use my modified patch instead: +
+`wget https://raw.githubusercontent.com/felikcat/unofficial-resonite-wiki/refs/heads/main/files/bigscreenBeyond_6_11.patch`
+
+`patch -p1 -N < bigscreenBeyond_6_11.patch`
+
+Compile the kernel: +
+`fakeroot make -j$(nproc)`
+
+Check if the build was successful; any value other than 0 indicates an error: +
+`echo $?`
+
+TIP: If compiling the kernel fails and the error doesn't make sense (such as being non-descriptive), it could be that your CPU is unstable if it's overclocked, while the second culprit would be the memory. +
+In my case however, I had to refund a 14900K CPU due to it being defective (13th to 14th i7 and i9 Intel CPUs commonly have this problem).
+
+Install the kernel modules, then the kernel: +
+`sudo make modules_install && sudo make install`
+
+
+== Using Envision
+
+=== Calibrating room setup on Debian and Ubuntu
+
+Install SteamVR, run the Room Setup and then complete it.
+
+Copy the files over to where Envision expects them to be: +
+`cp -r ${HOME}/.local/share/Steam/config/* ${HOME}/.steam/steam/config/`
+
+=== WiVRn
+Run the profile builder once, install what it outputs, then install the additional required dependencies it missed: +
+`sudo apt install libgstreamer-plugins-base1.0-dev libgl1-mesa-dev`
+
+https://lvra.gitlab.io/docs/fossvr/wivrn/[Read LVRA's wiki page on WiVRn], this is essential to ensuring a proper setup for you.
+
+If you're combining libsurvive (for Lighthouse device support) with WiVRn, install: +
+`sudo apt install libhidapi-dev libusb-1.0-0-dev`
+
+NOTE: *For the CoreCtrl recommendation:* +
+Make a new profile called 'Resonite' with automatic activation, then set the executable to 'Resonite.exe'. Then open that profile. +
+Go to your GPU, change the Performance Mode to 'Advanced', set the Power Profile to 'Virtual reality', and crank GPU and Memory up to their maximum frequency. +
+Apply then save the changes.

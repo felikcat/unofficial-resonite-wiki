@@ -1,3 +1,13 @@
+:experimental:
+ifdef::env-github[]
+:icons:
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
 .Use https://github.com/Gawdl3y/Resolute[Resolute] to have a nice graphical interface to install mods with; its usage is assumed.
 . ResoniteModSettings
 . DynBoneWrangler

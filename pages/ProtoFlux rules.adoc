@@ -1,3 +1,13 @@
+:experimental:
+ifdef::env-github[]
+:icons:
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
 === Any task with a Delay must run Async
 Nodes that need an async task will turn red and not function if you try to connect them to a non-async (regular) function.
 

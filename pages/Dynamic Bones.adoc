@@ -1,5 +1,4 @@
 :experimental:
-:imagesdir: ../images/
 ifdef::env-github[]
 :icons:
 :tip-caption: :bulb:

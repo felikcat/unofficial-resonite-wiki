@@ -8,6 +8,8 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
+=== If you don't know how to use something, look at its wiki page, but also hold the parameter and press the Secondary key
+
 === Any task with a Delay must run Async
 Nodes that need an async task will turn red and not function if you try to connect them to a non-async (regular) function.
 

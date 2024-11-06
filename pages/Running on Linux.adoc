@@ -9,9 +9,56 @@ ifdef::env-github[]
 endif::[]
 
 == Running the Windows version instead of Linux native
-The native Linux build is known to lack support, and is going to be removed soon. It causes a lot more problems than it's worth as well.
+The native Linux build is known to lack support, and is going to be removed soon. It also causes a lot more problems than it's worth.
 
-In Steam's Library, kbd:[RClick] on Resonite, kbd:[LClick] properties, go to Compatibility and force use of "Proton Experimental".
+Install https://flathub.org/apps/net.davidotek.pupgui2[ProtonUp-Qt], open it, and add the latest GE-Proton. Restart Steam after doing so.
+
+In Steam's Library, kbd:[RClick] on Resonite, kbd:[LClick] properties, go to Compatibility and force use of "GE-Proton9-18" (if it's newer, use that instead).
+
+
+== Tracking down crashes
+Take a look at https://github.com/alvr-org/ALVR/wiki/Linux-Troubleshooting[ALVR's Linux Troubleshooting] page.
+
+.Where Resonite logs are located:
+- `/home/YOUR_USER/.local/share/Steam/steamapps/compatdata/2519830/pfx/drive_c/users/steamuser/AppData/LocalLow/Yellow Dog Man Studios/Resonite` -> `Player.log`
+- `/home/YOUR_USER/.local/share/Steam/steamapps/common/Resonite/Logs`
+
+.Tips
+. If you see a ton of SteamVR errors in `Player.log` after a crash, switch to a different VR backend. I had this issue on Monado. +
+. If the game will not open with SteamVR active, close SteamVR, then reopen it.
+
+
+== Using Envision
+=== Combining with wlx-overlay-s
+This is so you can utilize your desktop in VR, and also have a wrist watch akin to XSOverlay.
+
+Set `wlx-overlay-s --openxr --show` as the Autostart Command on your Envision profile. +
+For SteamVR, you start wlx-overlay-s once, and it'll autostart on its own afterwards.
+
+Read the https://github.com/galister/wlx-overlay-s?tab=readme-ov-file#getting-started[Getting Started] to learn how to use wlx-overlay-s.
+
+=== Calibrating room setup on Debian and Ubuntu
+Install SteamVR, run the Room Setup and then complete it.
+
+Copy the files over to where Envision expects them to be: +
+`cp -r ${HOME}/.local/share/Steam/config/* ${HOME}/.steam/steam/config/`
+
+=== WiVRn
+Run the profile builder once, install what it outputs, then install the additional required dependencies it missed: +
+`sudo apt install libgstreamer-plugins-base1.0-dev libgl1-mesa-dev`
+
+https://lvra.gitlab.io/docs/fossvr/wivrn/[Read LVRA's wiki page on WiVRn], this is essential to ensuring a proper setup for you.
+
+If you're combining libsurvive (for Lighthouse device support) with WiVRn, install: +
+`sudo apt install libhidapi-dev libusb-1.0-0-dev`
+
+NOTE: *For Envision's CoreCtrl recommendation:* +
+It is important to first follow the https://gitlab.com/corectrl/corectrl/-/wikis/Setup[Setup instructions]. +
+Make a new profile called 'Resonite' with automatic activation, then set the executable to 'pressure-vessel-adverb'. Then open that profile. +
+Go to your GPU, change the Performance Mode to 'Advanced', set the Power Profile to 'Virtual reality'. +
+Apply then save the changes.
+
+
 
 == Using Gamescope / a GNOME tip if you use fractional display scaling
 Gamescope can be used to run Resonite at full resolution on say a 3840x2160 display, instead of 2560x1440 as mandated by 150% fractional scaling. +
@@ -28,7 +75,6 @@ TIP: *-e* = Steam integration +
 *-r* = display refresh rate
 
 == How to support and use the Bigscreen Beyond on Arch Linux
-
 Sudo edit `/etc/makepkg.conf` and ensure that `MAKEFLAGS=-j$(nproc)`, this will compile using all CPU cores while Arch's build system is used.
 
 https://wiki.archlinux.org/title/Kernel/Arch_build_system[This official Arch Wiki page] has good instructions on how to do so.
@@ -52,8 +98,8 @@ Ensure this patch is in the root of the 'linux-zen' folder, (sitting right by th
 
 TIP: If there are PGP signatures that could not be verified, use `gpg --recv-key THE_KEY` and then try building the kernel again.
 
-== How to support and use the Bigscreen Beyond on Ubuntu 24.10
 
+== How to support and use the Bigscreen Beyond on Ubuntu 24.10
 .Install the required and recommended dependencies:
 - `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 - `. "$HOME/.cargo/env"`
@@ -98,27 +144,3 @@ In my case however, I had to refund a 14900K CPU due to it being defective (13th
 
 Install the kernel modules, then the kernel: +
 `sudo make modules_install && sudo make install`
-
-
-== Using Envision
-
-=== Calibrating room setup on Debian and Ubuntu
-
-Install SteamVR, run the Room Setup and then complete it.
-
-Copy the files over to where Envision expects them to be: +
-`cp -r ${HOME}/.local/share/Steam/config/* ${HOME}/.steam/steam/config/`
-
-=== WiVRn
-Run the profile builder once, install what it outputs, then install the additional required dependencies it missed: +
-`sudo apt install libgstreamer-plugins-base1.0-dev libgl1-mesa-dev`
-
-https://lvra.gitlab.io/docs/fossvr/wivrn/[Read LVRA's wiki page on WiVRn], this is essential to ensuring a proper setup for you.
-
-If you're combining libsurvive (for Lighthouse device support) with WiVRn, install: +
-`sudo apt install libhidapi-dev libusb-1.0-0-dev`
-
-NOTE: *For the CoreCtrl recommendation:* +
-Make a new profile called 'Resonite' with automatic activation, then set the executable to 'Resonite.exe'. Then open that profile. +
-Go to your GPU, change the Performance Mode to 'Advanced', set the Power Profile to 'Virtual reality', and crank GPU and Memory up to their maximum frequency. +
-Apply then save the changes.

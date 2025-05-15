@@ -33,7 +33,7 @@ TIP: Why? Syncing to the Cloud is much faster than uploading to a Headless serve
 
 . Go to the Main Menu -> Home -> Avatar Creator. You will then select the Headset with the Dev Tool, and open an Inspector. Go up the Root until you see "Root: Avatar Creator". It should look like the following screenshot: +
 image:Resonite_rtFcjhfIeD.jpg[]
-- Keep the Headset's Rotation at: x -> 0, y -> 90, z -> 0
+- Align the Headset as close to the center of the head as possible, then press 'Center Head Position'. Make sure the "VR" text sticks out in front of the head, you don't want to put the Headset too much into the head, otherwise you'll see your model's head in VR.
 
 . Avatar Creator -> Turn off "Use Symmetry", we're going to manually setup the hands.
 - You want your hands to relatively look like this. Be sure to use the Gizmos (those red, green, and blue arrows) to line it up precisely:

@@ -1,5 +1,5 @@
 :experimental:
-:imagesdir: ../images/Custom Nameplate
+:imagesdir: ../../images/Custom Nameplate
 ifdef::env-github[]
 :icons:
 :tip-caption: :bulb:

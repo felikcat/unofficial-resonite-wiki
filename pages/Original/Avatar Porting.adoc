@@ -1,5 +1,5 @@
 :experimental:
-:imagesdir: ../images/Avatar Porting
+:imagesdir: ../../images/Avatar Porting
 ifdef::env-github[]
 :icons:
 :tip-caption: :bulb:

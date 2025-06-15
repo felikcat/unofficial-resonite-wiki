@@ -8,3 +8,13 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
+== ValueIndirectDecrement<C,T>
+
+== ValueIndirectDecrement<T>
+
+.Inputs
+[%collapsible]
+====
+`* (Call)`: Call this to decrease the value.
+`Variable`: The variable to incre
+====

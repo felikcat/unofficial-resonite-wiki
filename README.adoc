@@ -1,14 +1,14 @@
 :experimental:
 
-The official wiki pages are confusing at times, or lack specific tutorials.
+This is split into original content, and those that are a derivative of the official wiki (English only).
 
-== Pages
-- xref:pages/Avatar Porting.adoc[Avatar Porting]
-- xref:pages/Commonly used ProtoFlux Nodes.adoc[Commonly used ProtoFlux Nodes]
-- xref:pages/Custom Nameplate.adoc[Custom Nameplate]
-- xref:pages/Desktop usage.adoc[Desktop usage] -> keybindings, and how to do universal things
-- xref:pages/Dynamic Bones.adoc[Dynamic Bones]
-- xref:pages/Essential mods.adoc[Essential mods to install]
-- xref:pages/ProtoFlux rules.adoc[ProtoFlux rules/guidelines]
-- xref:pages/Running on Linux.adoc[Running on Linux]
-- xref:pages/Setting a profile picture.adoc[Setting a profile picture]
+== Original content pages
+- xref:pages/Original/Avatar Porting.adoc[Avatar Porting]
+- xref:pages/Original/Commonly used ProtoFlux Nodes.adoc[Commonly used ProtoFlux Nodes]
+- xref:pages/Original/Custom Nameplate.adoc[Custom Nameplate]
+- xref:pages/Original/Desktop usage.adoc[Desktop usage] -> keybindings, and how to do universal things
+- xref:pages/Original/Dynamic Bones.adoc[Dynamic Bones]
+- xref:pages/Original/Essential mods.adoc[Essential mods to install]
+- xref:pages/Original/ProtoFlux rules.adoc[ProtoFlux rules/guidelines]
+- xref:pages/Original/Running on Linux.adoc[Running on Linux]
+- xref:pages/Original/Setting a profile picture.adoc[Setting a profile picture]

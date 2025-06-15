@@ -1,0 +1,7 @@
+When xref:Resonite.adoc[Resonite] launches, it performs a *bootstrap process*. The job of this process is to setup the initial world(s) of Resonite so users can start interacting with the system inside the FrooxEngine. By default, Resonite runs the Userspace bootstrap function, which sets up the userspace overlay layer, creates or loads the local home and signs the user in, if they stored their credentials.
+
+The bootstrap function can however be overriden using the -Bootstrap command line argument and providing a fully classified path to the class containing the Bootstrap() static function.
+
+Resonite will automatically call this function once it's done with its own initialization.
+
+Overriding this function can be used to create various specific Resonite applications, where you want to load or setup a task specific world, bypassing the home experience, userspace and all its functionality altogether (almost similar to Kiosk Mode where the user has no UI and has limited functionality). 

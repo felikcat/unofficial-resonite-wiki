@@ -1,9 +1,9 @@
 *Impulses*, referred to as *calls*, are discrete actions within the ProtoFlux ExecutionContext and one of the two basic types of chains to build. In contrast to chains of inputs and outputs to a node, which are generally continuous to one another, impulses push a task execution along the impulse chain, much like conventional imperative programming.
 
-.Overview
-[%collapsible]
+== Overview
+[%collapsible%open]
 ====
-In ProtoFlux's ExecutionContext and its derivatives, nodes that perform a discrete action require an impulse to execute. For example, duplicating a slot can't trigger whenever it wants--it would be impossible to control such a thing. As such, a special input * of type Call is used to trigger the action. This chain can then be continued via the Next output.
+In ProtoFlux's xref:Context.adoc#ExecutionContext[ExecutionContext] and its derivatives, nodes that perform a discrete action require an impulse to execute. For example, duplicating a slot can't trigger whenever it wants--it would be impossible to control such a thing. As such, a special input * of type Call is used to trigger the action. This chain can then be continued via the Next output.
 
 Upon an action node receiving an impulse, it evaluates all the non-impulse inputs connected to the node. This contextualizes the relationship between impulses and other node chains: Impulses push task execution, while action nodes pull their inputs, which may pull their inputs, and so on until the original input can be evaluated.
 
@@ -12,8 +12,8 @@ Impulses are a local runtime by default within ProtoFlux. If interacting with th
 Impulses can come from a variety of sources. Most commonly, when building ProtoFlux, a Call Input can be created by dragging out an impulse input and pressing secondary. Impulses may also come from events, or impulse chains that start once receiving some sort of signal. These include, but are not limited to, dynamic impulses, button events, fire on events, and world/item events.
 ====
 
-.Context
-[%collapsible]
+== Context
+[%collapsible%open]
 ====
 Impulses are attached to a particular instance of an ExecutionContext. This is not to be confused with the general concept of contexts in ProtoFlux, as all impulses are from an ExecutionContext, but rather refers to the specific values and variables that the impulse sees.
 
@@ -24,8 +24,8 @@ Context is kept when passing through the same node group and lost if there is a 
 For example, if a dynamic impulse is pulsed, and that dynamic impulse pulses another one, and that third dynamic impulse writes to a local, the change will not be seen by the Next path of the first dynamic impulse trigger. This is because the execution leaves the node group of the first trigger after the first dynamic impulse is pulsed, causing the second dynamic impulse to not be within the same context as the initial chain. If the second dynamic impulse wrote to the same local, then all the node groups are connected, and the change will be seen by the initial Next path.
 ====
 
-.Impulse flow
-[%collapsible]
+== Impulse flow
+[%collapsible%open]
 ====
 Impulse flow dictates how the impulse will be executed in relation to the runtime of the engine. There are two types of impulse flows: non-async and async.
 
@@ -47,8 +47,8 @@ In contrast, all the other async nodes share the same context. For example, a lo
 If processing a lot of data using ProtoFlux, it may be desirable to use async impulse flow and spread execution across multiple frames, as it will prevent a massive framerate hitch when executing at the cost of taking slightly longer. 
 ====
 
-.See Also
-[%collapsible]
+== See Also
+[%collapsible%open]
 ====
 * xref:Local.adoc[ProtoFlux:Local], xref:Store.adoc[ProtoFlux:Store], and xref:Data Model Store.adoc[ProtoFlux:Data Model Store] for the three types of variables one can access in ProtoFlux.
 * xref:Flow.adoc[ProtoFlux:Flow] for nodes that can control how an impulse flows.

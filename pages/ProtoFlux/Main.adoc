@@ -5,7 +5,7 @@ ProtoFlux is the crown jewel of our creative tools - the most powerful visual pr
 
 
 .Usage
-[%collapsible]
+[%collapsible%show]
 ====
 ProtoFlux is represented in the world as nodes that can be selected from the xref:Node Browser.adoc[ProtoFlux Node Browser], and spawned from the xref:Tool.adoc[ProtoFlux Tool].
 

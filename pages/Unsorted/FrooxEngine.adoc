@@ -1,0 +1,42 @@
+FrooxEngine is the main link:https://en.wikipedia.org/wiki/Game_engine[game engine] used by xref:Resonite.adoc[Resonite]. It is owned and primarily developed by Frooxius, though other members of the Resonite team work on the engine as well.
+
+FrooxEngine is essentially the main controller of Resonite. It is responsible for:
+
+* Specifying the data model, including value types and reference types, as well as synchronizing this data across clients
+* The behavior of most Components
+* Reading and writing data in the local database
+* Linking and using external libraries for other functionality, including but not limited to:
+- ProtoFlux
+- SkyFrost for communicating with the cloud
+- Unity for runtime and rendering
+- MathX for mathematical operations
+- BepuPhysics2 for physics calculations
+
+== The basics of how FrooxEngine works (currently)
+[%collapsible%open]
+====
+FrooxEngine works on a multicore processing architecture (So it runs on multi core) with single core rendering. This means that if you add a lot to a world all at once, the engine has to send that to the rendering system on one thread. this can cause performance issues, since FrooxEngine has to wait for the rendering engine to receive all the slot updates and generate the scene. If you import a file from your computer for example, that is done on a separate thread, allowing it to go in parallel and not requiring a scheduler. While something like duplicating a slot has to be done synchronously due to rendering engine implementation that tries to reduce instability and crashes. This doesn't always work though.
+
+When it comes to doing many things in Resonite, FrooxEngine is the manager, making sure libraries for importing (currently Assimp) and libraries for physics (Currently BepuPhysics2) work together in harmony to create the game.
+
+Currently, many of the instability issues with FrooxEngine have been largely blamed on the rendering engine. This is because the current implementation uses Unity, which many players like to refer to it's implementation as, "Unity is like a zombie, being puppeted on strings by the necromancer that is FrooxEngine".
+====
+
+== Technical explanation on the implementation of Unity Engine as a renderer
+[%collapsible%open]
+====
+FrooxEngine does not run on unity natively, and all the game calculations and logic is done through the engine. Unity does not know anything about the logic of what is going on, so it has to be told by FrooxEngine what to do. Upon game initialization, any side loaded DLL's like mod loaders are loaded immediately, so they can perform the proper patches. Next the game reads the system hardware at a surface glance, figuring out the audio devices and VR hardware / desktop hardware being used so it can act accordingly. Not much different from a typical program. Next the game boots Unity, which has a script in the scene that boots FrooxEngine, which then starts up userspace.
+
+What happens next is unlike any other game that uses Unity. FrooxEngine creates a hierarchy of what the world looks like in terms of FrooxEngine slots and components, then forcibly shoves the generated content into Unity after translating it into Unity C# object types instead of FrooxEngine types. After this, FrooxEngine reads Unity's scene every frame, checks for changes, then writes those changes to keep FrooxEngine's scene and Unity's scene synchronized.
+
+This is done via a set of classes in C# called "Connector<T>" and it's cousins within the code. A DLL called "UnityFrooxEngineRunner.dll" handles the different types of components that need to be translated from FrooxEngine classes into Unity classes. When they are translated, FrooxEngine keeps track of these unity objects, and handles the syncronization of the creation, destruction, and values of objects inside FrooxEngine and UnityEngine.
+
+Now if the two become desynced, and FrooxEngine tries to remove an object that no longer exists, a unity crash will occur. this is the technical explanation why Unity is blamed for the problem of performance and crashes, because it doesn't handle removal correctly.
+====
+
+== See also
+[%collapsible%open]
+====
+* xref:Architecture Overview.adoc[Architecture Overview]
+* xref:Bootstrapping.adoc[Bootstrapping]
+====

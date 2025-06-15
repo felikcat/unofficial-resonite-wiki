@@ -8,3 +8,4 @@ The ExecutionContext context mirrors traditional link:https://en.wikipedia.org/w
 ExecutionContext is the most basic context for control flow in ProtoFlux. It establishes the concept of xref:Impulses.adoc[impulses] (along with xref:Async.adoc[async] control flow) and writes (but only to a ProtoFlux-specific value store, such as a xref:Local.adoc[Local] or xref:Store.adoc[Store]). 
 
 === FrooxEngineContent
+The FrooxEngineContext context is an extension of the ExecutionContext that is aware of FrooxEngine. This allows nodes to interact with the data model by drives and writes to a field. FrooxEngineContext graphs are aware of the local user executing the node, the IWorldElements existing in a world, the world and session themselves, and how to interface all of these concepts with ProtoFlux. 

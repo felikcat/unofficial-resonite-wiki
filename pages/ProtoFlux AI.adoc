@@ -1,0 +1,32 @@
+:experimental:
+:imagesdir: ../images/ProtoFlux AI
+ifdef::env-github[]
+:icons:
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+== How-to
+. Install https://www.cherry-ai.com/download[Cherry Studio].
+. Run Cherry Studio, go to Settings, then set your Anthropic API Key and optionally disable SiliconFlow and/or other providers.
+- Buy some API credits from Anthropic if you haven't done so already: https://console.anthropic.com/settings/billing
+- OpenAI's thinking models such as o3-mini aren't suitable for MCP usage as of June 16 2025.
+
+. Go to MCP Servers -> Add Server -> Quick Create, then replicate the following: +
+image:Cherry_Studio_tUtVorzTXd.png[]
+- If this fails, ensure you already installed the required dependencies (should be a green check inside a circle on the top right) and tried changing the Package Registry away from Default.
+
+. In the Assistants tab, ensure FluxMcp is selected, and also select the model on the top to "Claude 3.5 Haiku":
+image:Cherry_Studio_0UOvIOc9nH.png[]
+
+. Before asking anything, ensure that Resonite is left open so that the FluxMcp mod is working in the background.
+
+. When asking, always ensure you put "ProtoFlux" somewhere in the prompt.
+
+NOTE: Claude Sonnet 4 will test the ProtoFlux it has created, however it'll make numerous errors along the way and take a very long time to correct itself, along with charging you a lot of money.
+
+TIP: To keep the assistant settings persistent: +
+Right-click on the Default Assistant, enable FluxMcp in the MCP Servers, and in Model Settings set Claude 3.5 Haiku as the default model.

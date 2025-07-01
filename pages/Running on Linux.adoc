@@ -8,6 +8,8 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
+WARNING: If Envision recommends to set the AMD GPU power profile to VR, don't. It is now bad advice as your performance will decrease.
+
 == Better video playback support
 Install https://flathub.org/apps/com.vysp3r.ProtonPlus[ProtonPlus], open it, and add the latest Proton-GE RTSP. Restart Steam after doing so.
 
@@ -44,18 +46,7 @@ Copy the files over to where Envision expects them to be: +
 Run the profile builder once, install what it outputs, then install the additional required dependencies it missed: +
 `sudo apt install libgstreamer-plugins-base1.0-dev libgl1-mesa-dev`
 
-https://lvra.gitlab.io/docs/fossvr/wivrn/[Read LVRA's wiki page on WiVRn], this is essential to ensuring a proper setup for you.
-
-If you're combining libsurvive (for Lighthouse device support) with WiVRn, install: +
-`sudo apt install libhidapi-dev libusb-1.0-0-dev`
-
-NOTE: *For Envision's CoreCtrl recommendation:* +
-It is important to first follow the https://gitlab.com/corectrl/corectrl/-/wikis/Setup[Setup instructions]. +
-Make a new profile called 'Resonite' with automatic activation, then set the executable to 'pressure-vessel-adverb'. Then open that profile. +
-Go to your GPU, change the Performance Mode to 'Advanced', set the Power Profile to 'Virtual reality'. +
-Apply then save the changes.
-
-
+https://lvra.gitlab.io/docs/fossvr/wivrn/[Read LVRA's wiki page on WiVRn], this is essential to ensuring a proper setup for yourself.
 
 == Using Gamescope / a GNOME tip if you use fractional display scaling
 Gamescope can be used to run Resonite at full resolution on say a 3840x2160 display, instead of 2560x1440 as mandated by 150% fractional scaling. +
@@ -85,9 +76,9 @@ Edit: `customization.cfg`
 _distro="Suse"
 ----
 
-`mkdir linux614-tkg-userpatches`
+`mkdir linux615-tkg-userpatches`
 
-`curl https://raw.githubusercontent.com/felikcat/unofficial-resonite-wiki/refs/heads/main/files/bigscreenBeyond_6_11.patch -o linux614-tkg-userpatches/bigscreenBeyond_6_14.mypatch`
+`curl https://raw.githubusercontent.com/felikcat/unofficial-resonite-wiki/refs/heads/main/files/bigscreenBeyond_6_11.patch -o linux615-tkg-userpatches/bigscreenBeyond_6_15.mypatch`
 
 Install schedtool from the 'utilities' repository: +
 `opi schedtool`

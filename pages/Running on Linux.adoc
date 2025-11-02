@@ -182,6 +182,22 @@ In my case however, I had to refund a 14900K CPU due to it being defective (13th
 Install the kernel modules, then the kernel: +
 `sudo make modules_install && sudo make install`
 
+
+== Bigscreen Beyond low microphone volume workaround
+
+`sudo pacman -S easyeffects lsp-plugins-lv2`
+
+Open EasyEffects, go to Preferences, and disable 'Process All Output Streams'.
+
+Go to PipeWire -> General -> uncheck 'Use Default Input' and set it to "Beyond Analog Stereo".
+
+Go to Input -> Add Effect: Autogain, and leave its settings at the defaults.
+
+Now you can set the input to EasyEffects Source in your desired application or game.
+
+NOTE: The noise supression inside VRChat and Resonite should mask the static or background noise, but you can optionally add an effect to reduce noise.
+
+
 == More information (the Linux VR Adventures Wiki); it's recommended to read this last
 https://lvra.gitlab.io/docs/resonite/ +
 https://lvra.gitlab.io/docs/other/bigscreen-beyond/

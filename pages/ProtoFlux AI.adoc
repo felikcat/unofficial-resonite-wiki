@@ -9,6 +9,8 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
+WARNING: Untested for months and will remain as such.
+
 == How-to
 . Install https://www.cherry-ai.com/download[Cherry Studio].
 . Run Cherry Studio, go to Settings, then set your Anthropic API Key and optionally disable SiliconFlow and/or other providers.

@@ -79,10 +79,12 @@ Open the 'CachyOS Kernel Manager'.
 
 Click on 'Configure'.
 
-Go to 'Patches' then add the Bigscreen Beyond patch using 'Add remote patch', then put in: `https://raw.githubusercontent.com/felikcat/unofficial-resonite-wiki/refs/heads/main/files/bigscreenBeyond_6_11.patch`. +
+Put the 'Custom package name' as `$pkgbase-bigscreen`.
+
+Ensure the kernel edition selected is 'LTS', then go to 'Patches' then add the Bigscreen Beyond patch using 'Add remote patch' and put in: `https://gist.githubusercontent.com/galister/08cddf10ac18929647d5fb6308df3e4b/raw/0f6417b6cb069f19d6c28b730499c07de06ec413/combined-bsb-6-10.patch`. +
 After that's done, build the kernel.
 
-Once it's done building and installed, reboot into the new kernel and enjoy the Bigscreen Beyond!
+Once it's done building and installed, reboot into the new LTS kernel and enjoy the Bigscreen Beyond!
 
 == How to support and use the Bigscreen Beyond 1/2/2e on Arch Linux
 Sudo edit `/etc/makepkg.conf` and ensure that `MAKEFLAGS=-j$(nproc)`, this will compile using all CPU cores while Arch's build system is used.

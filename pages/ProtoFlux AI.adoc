@@ -1,5 +1,4 @@
 :experimental:
-:imagesdir: ../images/ProtoFlux AI
 ifdef::env-github[]
 :icons:
 :tip-caption: :bulb:
@@ -9,26 +8,29 @@ ifdef::env-github[]
 :warning-caption: :warning:
 endif::[]
 
-WARNING: Untested for months and will remain as such.
-
 == How-to
-. Install https://www.cherry-ai.com/download[Cherry Studio].
-. Run Cherry Studio, go to Settings, then set your Anthropic API Key and optionally disable SiliconFlow and/or other providers.
-- Buy some API credits from Anthropic if you haven't done so already: https://console.anthropic.com/settings/billing
-- OpenAI's thinking models such as o3-mini aren't suitable for MCP usage as of June 16 2025.
+.Setup
+. Install the https://github.com/Gawdl3y/Resolute?tab=readme-ov-file#downloads[Resolute] modding GUI; for Arch Linux it'd be running: `paru -Syu resolute-bin webkit2gtk-4.1`
 
-. Go to MCP Servers -> Add Server -> Quick Create, then replicate the following: +
-image:Cherry_Studio_tUtVorzTXd.png[]
-- If this fails, ensure you already installed the required dependencies (should be a green check inside a circle on the top right) and tried changing the Package Registry away from Default.
+. Open Resolute to install the mod manager, then install Resonite Mod Settings and CherryPick. Afterwards you can close Resolute.
 
-. In the Assistants tab, ensure FluxMcp is selected, and also select the model on the top to "Claude 3.5 Haiku":
-image:Cherry_Studio_0UOvIOc9nH.png[]
+. Read FluxSDK's https://flux-sdk.samsmucny.com/ProtoGraph/Getting-Started.html[Getting Started].
 
-. Before asking anything, ensure that Resonite is left open so that the FluxMcp mod is working in the background.
+. Ensure CachyOS (or Arch Linux with the 'fish' shell) is able to know the paths of dotnet installed software:
+- Edit `~/.config/fish/config.fish`: +
+[fish]
+----
+set -gx DOTNET_ROOT /usr/share/dotnet
+fish_add_path /usr/share/dotnet
+fish_add_path $HOME/.dotnet/tools
+----
 
-. When asking, always ensure you put "ProtoFlux" somewhere in the prompt.
+.Using Claude
+. Ensure Claude Code is already installed.
 
-NOTE: Claude Sonnet 4 will test the ProtoFlux it has created, however it'll make numerous errors along the way and take a very long time to correct itself, along with charging you a lot of money.
+. Download a ZIP of the https://github.com/felikcat/protoflux-claude-template[protoflux-claude-template] repository, then go into its directory to then run `claude`.
 
-TIP: To keep the assistant settings persistent: +
-Right-click on the Default Assistant, enable FluxMcp in the MCP Servers, and in Model Settings set Claude 3.5 Haiku as the default model.
+. The agents will automatically handle what model to use based on the task. Keep in mind that I specified Opus instead of Sonnet and it uses ultrathink for maximum accuracy.
+- If the costs aren't reasonable for you, you can set the agents that use Opus to use Sonnet instead, and remove 'ultrathink' from CLAUDE.md.
+
+. Have fun.

@@ -33,4 +33,4 @@ fish_add_path $HOME/.dotnet/tools
 . The agents will automatically handle what model to use based on the task. Keep in mind that I specified Opus instead of Sonnet and it uses ultrathink for maximum accuracy.
 - If the costs aren't reasonable for you, you can set the agents that use Opus to use Sonnet instead, and remove 'ultrathink' from CLAUDE.md.
 
-. Have fun.
+. Have fun. Do keep in mind that you have to push it towards using more optimal solutions at times, such as using ProtoDust for particles.

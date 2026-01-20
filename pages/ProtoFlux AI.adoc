@@ -25,12 +25,11 @@ fish_add_path /usr/share/dotnet
 fish_add_path $HOME/.dotnet/tools
 ----
 
-.Using Claude
-. Ensure Claude Code is already installed.
+.Using Google Gemini
+. Ensure Gemini CLI is already installed.
 
-. Download a ZIP of the https://github.com/felikcat/protoflux-claude-template[protoflux-claude-template] repository, then go into its directory to then run `claude`.
+. Download a ZIP of the https://github.com/felikcat/protoflux-gemini-template[protoflux-gemini-template] repository, then go into its directory to then run `gemini`.
 
-. The agents will automatically handle what model to use based on the task. Keep in mind that I specified Opus instead of Sonnet and it uses ultrathink for maximum accuracy.
-- If the costs aren't reasonable for you, you can set the agents that use Opus to use Sonnet instead, and remove 'ultrathink' from CLAUDE.md.
+. I would recommend using Gemini 3 Flash which you can select using `/model`, it's good enough and relatively quick.
 
 . Have fun. Do keep in mind that you have to push it towards using more optimal solutions at times, such as using ProtoDust for particles.

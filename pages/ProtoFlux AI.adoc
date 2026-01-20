@@ -12,7 +12,7 @@ endif::[]
 .Setup
 . Install the https://github.com/Gawdl3y/Resolute?tab=readme-ov-file#downloads[Resolute] modding GUI; for Arch Linux it'd be running: `paru -Syu resolute-bin webkit2gtk-4.1`
 
-. Open Resolute to install the mod manager, then install Resonite Mod Settings and CherryPick. Afterwards you can close Resolute.
+. Open Resolute to install the mod manager, then install Resonite Mod Settings, CherryPick, and HotReloadLib. Afterwards you can close Resolute.
 
 . Read FluxSDK's https://flux-sdk.samsmucny.com/ProtoGraph/Getting-Started.html[Getting Started].
 

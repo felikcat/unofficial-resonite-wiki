@@ -12,4 +12,4 @@ The official wiki pages are confusing at times, or lack specific tutorials.
 - xref:pages/ProtoFlux rules.adoc[ProtoFlux rules/guidelines]
 - xref:pages/Running on Linux.adoc[Running on Linux]
 - xref:pages/Setting a profile picture.adoc[Setting a profile picture]
-- xref:pages/ProtoFlux AI.adoc[ProtoFlux AI usage]
+- xref:pages/ProtoFlux AI.adoc[Using AI to create ProtoFlux, automatically attach components, etc.]
